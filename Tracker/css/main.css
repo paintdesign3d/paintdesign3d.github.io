@@ -383,6 +383,7 @@ iframe {
   display: -ms-flexbox;
   display: flex;
   flex-wrap: wrap;
+ 
 }
 
 .login100-form-btn {
@@ -412,6 +413,8 @@ iframe {
 
 .login100-form-btn:hover {
   background-color: #57b846;
+  color: #fff;
+  border: 1px solid #000000;
 }
 
 
