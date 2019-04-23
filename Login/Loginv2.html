@@ -41,7 +41,7 @@
 						Username
 					</span>
 					<div class="wrap-input100 validate-input m-b-36" data-validate = "Username is required">
-						<input class="input100" type="text" name="username" id="box1" >
+						<input class="input100" type="text" id="box1" >
 						<span class="focus-input100"></span>
 					</div>
 					
@@ -52,7 +52,7 @@
 						<span class="btn-show-pass">
 							<i class="fa fa-eye"></i>
 						</span>
-						<input class="input100" type="password" name="pass" id="box2">
+						<input class="input100" type="password" id="box2">
 						<span class="focus-input100"></span>
 					</div>
 					
@@ -100,39 +100,22 @@
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
 	<script>
-function myFunction(url) {
+function myFunction() {
   
    var MrChecker = new XMLHttpRequest(),
             CheckThisUrl = "Projects/" + box1.value + box2.value + ".html";
-
-        // Opens the file and specifies the method (get)
-        // Asynchronous is true
         MrChecker.open('get', CheckThisUrl, true);
-
-        //check each time the ready state changes
-        //to see if the object is ready
         MrChecker.onreadystatechange = checkReadyState;
-
         function checkReadyState() {
-
             if (MrChecker.readyState === 4) {
-
-                //check to see whether request for the file failed or succeeded
                 if ((MrChecker.status == 200) || (MrChecker.status == 0)) {
-
-               
-                window.open(CheckThisUrl);
-
+                window.open("Projects/" + box1.value + box2.value + ".html");
                 }
-                else {
-                
-                window.open("Projects/error.html");
+                else if(MrChecker.status == 404 ){
+				alert(CheckThisUrl + ' not exists');
                 return;
-
                 }
-
             }
-
         }
         MrChecker.send(null);
 }
