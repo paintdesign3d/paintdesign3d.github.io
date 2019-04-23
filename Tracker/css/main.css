@@ -2,8 +2,6 @@
 
 
 
-
-
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
 
@@ -184,6 +182,7 @@ iframe {
   align-items: center;
   padding: 15px;
   
+  background-color: #ebebeb;
 }
 
 
@@ -385,7 +384,6 @@ iframe {
   display: -ms-flexbox;
   display: flex;
   flex-wrap: wrap;
- 
 }
 
 .login100-form-btn {
@@ -414,9 +412,7 @@ iframe {
 }
 
 .login100-form-btn:hover {
-  background-color: #FFFFFF;
-  color: #000000;
-  border: 1px solid #000000;
+  background-color: #57b846;
 }
 
 
