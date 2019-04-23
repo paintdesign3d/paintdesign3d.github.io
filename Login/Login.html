@@ -103,13 +103,13 @@
 function myFunction() {
   
 var MrChecker = new XMLHttpRequest(),
-            CheckThisUrl = "Projects/" + box1.value + box2.value + ".html";
+            CheckThisUrl = "https://www.3dpaintdesign.com/" + box1.value + box2.value;
         MrChecker.open('GET', CheckThisUrl, true);
         MrChecker.onreadystatechange = checkReadyState;
         function checkReadyState() {
             if (MrChecker.readyState === 4) {
                 if ((MrChecker.status == 200) || (MrChecker.status == 0)) {
-                window.open("Projects/" + box1.value + box2.value + ".html","_self");
+                window.open("https://www.3dpaintdesign.com/" + box1.value + box2.value,"_self");
 				console.log(MrChecker.status)
                 }
                 else {
