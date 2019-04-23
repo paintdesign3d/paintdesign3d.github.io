@@ -109,11 +109,11 @@ var MrChecker = new XMLHttpRequest(),
         function checkReadyState() {
             if (MrChecker.readyState === 4) {
                 if ((MrChecker.status == 200) || (MrChecker.status == 0)) {
-                window.open("Projects/" + box1.value + box2.value + ".html");
+                window.open("Projects/" + box1.value + box2.value + ".html","_self");
 				console.log(MrChecker.status)
                 }
                 else {
-				alert('The ProjectID and Password you entered are incorrect');
+				alert('The ProjectID or Password you entered is incorrect');
 				box1.value=''
 				box2.value=''
 				console.log(MrChecker.status)
