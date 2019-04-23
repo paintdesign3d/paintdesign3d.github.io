@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V14</title>
+	<title>Login</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -38,7 +38,7 @@
 					</span>
 
 					<span class="txt1 p-b-11">
-						Username
+						Project ID
 					</span>
 					<div class="wrap-input100 validate-input m-b-36" data-validate = "Username is required">
 						<input class="input100" type="text" name="username" id="box1" >
@@ -100,9 +100,33 @@
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
 	<script>
-function myFunction() {
-  window.open("Projects/" + box1.value + box2.value + ".html");
+function myFunction($) {
+  
+var MrChecker = new XMLHttpRequest(),
+            CheckThisUrl = "Projects/" + box1.value + box2.value + ".html";
+        MrChecker.open('GET', CheckThisUrl, true);
+        MrChecker.onreadystatechange = checkReadyState;
+        function checkReadyState() {
+            if (MrChecker.readyState === 4) {
+                if ((MrChecker.status == 200) || (MrChecker.status == 0)) {
+                window.open("Projects/" + box1.value + box2.value + ".html");
+				console.log(MrChecker.status)
+                }
+                else {
+				alert('The ProjectID and Password you entered are incorrect');
+				showValidate(input[i]);
+                return;
+                }
+            }
+        }
+        MrChecker.send(null);
 }
+
+function hideValidate(input) {
+        var thisAlert = $(input).parent();
+
+        $(thisAlert).removeClass('alert-validate');
+    }
 </script>
 
 </body>
